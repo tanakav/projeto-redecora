@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 <div>
     Teste de extends
