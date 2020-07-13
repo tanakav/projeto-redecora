@@ -9,6 +9,6 @@
 @section('scripts')
 <script>
     alert('test de section scripts');
-
+    Carla 
 </script>
 @endsection
