@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
-@section('content')
+@section('conteudo')
 <div>
-    Teste de extends
+    <a href="{{ route(home.index) }}"></a>
 </div>
-@endsection
-
-@section('scripts')
-<script>
-    alert('test de section scripts');
-
-</script>
 @endsection
