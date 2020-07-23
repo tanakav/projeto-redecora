@@ -11,7 +11,9 @@
                 <img src="imagens/Produtos/Outros/decor-canal-768x576.jpg" alt="" class="img-fluid">
             </div>
             <div class="col-6 text-justify align-self-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, perspiciatis odit animi ipsa
+                <p>
+                    TESTEEE
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, perspiciatis odit animi ipsa
                     libero similique recusandae et temporibus maxime voluptate eos expedita. Quos laudantium labore
                     architecto, atque expedita voluptatem dicta.
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, perspiciatis odit animi ipsa
