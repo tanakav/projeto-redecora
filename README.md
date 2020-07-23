@@ -8,5 +8,5 @@ Projeto final desenvolvido durante o curso **Desenvolvimento Web Full Stack** da
     npm run dev
 Para evitar ter de utilizar o npm run dev a toda atualização de js ou css:
 
-    npm watch
+    npm run watch
 
