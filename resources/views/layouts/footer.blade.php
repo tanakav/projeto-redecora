@@ -10,7 +10,7 @@
                                 alt=""></a></div>
                     <div><a href="mailto:contato@redecora.com.br"><img class="icone mx-2" src="imagens/Footer/email.png"
                                 alt=""></a></div>
-                    <div><a href="contact-form.php"><img class="icone mx-2" src="imagens/Footer/support.png" alt=""></a>
+                    <div><a href="{{ route('home.contato') }}"><img class="icone mx-2" src="imagens/Footer/support.png" alt=""></a>
                     </div>
                 </div>
             </div>
