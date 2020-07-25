@@ -2,7 +2,8 @@
 
 @section('conteudo')
 <div>
-    <a href="{{ route('home.index') }}"></a>
+    <a href="{{ route('home.quemSomos') }}"></a>
+
     <div class="d-flex flex-wrap justify-content-around">
             <div class="py-2 mb-2 text-center ">
                 <div class="categorias">
@@ -239,5 +240,10 @@
                 <span class="sr-only">Próximo</span>
             </a>
         </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> carladmoreira
 </div>
 @endsection
