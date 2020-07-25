@@ -2,6 +2,6 @@
 
 @section('conteudo')
 <div>
-    <a href="{{ route('home.index') }}"></a>
+    <a href="{{ route('home.quemSomos') }}"></a>
 </div>
 @endsection
