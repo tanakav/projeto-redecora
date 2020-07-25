@@ -3,7 +3,6 @@
 @section('conteudo')
 <div>
     <a href="{{ route('home.index') }}"></a>
-    
     <div class="d-flex flex-wrap justify-content-around">
             <div class="py-2 mb-2 text-center ">
                 <div class="categorias">
