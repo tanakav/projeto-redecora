@@ -1,6 +1,6 @@
 <div class="container-fluid row" style="padding: 0; margin: 0;">
     <div class="col-4 brand text-center">
-        <a class="navbar-brand mr-auto" href="index.php"><img src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt=""
+        <a class="navbar-brand mr-auto" href="{{ route('home.home') }}"><img src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt=""
                 class="img-fluid"></a>
     </div>
 
@@ -15,7 +15,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <form class="form-inline" action="search.php" method="get">
+                    <form class="form-inline" action="{{ route('home.produtos') }}" method="get">
                         <input class="form-control form-control-sm mr-sm-1" type="search" placeholder="Pesquisar..."
                             name="pesquisar">
                         <button class="btn btn-outline-light btn-sm mr-sm-4" type="submit"><img
@@ -26,13 +26,13 @@
                             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.index') }}">Quem Somos</a>
+                            <a class="nav-link" href="{{ route('home.quemSomos') }}">Quem Somos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="search.php">Produtos</a>
+                            <a class="nav-link" href="{{ route('home.produtos') }}">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="wishlist.php"><img src="imagens/Header/heart.png" alt=""
+                            <a class="nav-link" href="{{ route('home.favoritos') }}"><img src="imagens/Header/heart.png" alt=""
                                     class="icone"></a>
                         </li>
                         <li class="nav-item">
