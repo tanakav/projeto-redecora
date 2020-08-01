@@ -1,3 +1,1 @@
-require('./bootstrap');
-
-require('./scripts.js');
+require('bootstrap');

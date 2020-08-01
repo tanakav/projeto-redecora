@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('conteudo')
-<div id="conteudo" class="container py-3 w-75">
+<div id="conteudo" class="container py-3">
     <!-- inicio conteudo -->
 
     <div>
