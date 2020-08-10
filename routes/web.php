@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index',['titulo'=>'Redecora']);
-});
+})->name('home.index');
 
-Route::get('/quemsomos','HomeController@index')->name('home.index');
+Route::get('/home', 'HomeController@home')->name('home.home');
+
+Route::get('/quemsomos','HomeController@quemSomos')->name('home.quemSomos');
+
+Route::get('/contato','HomeController@contato')->name('home.contato');
+
+Route::get('/favoritos','HomeController@favoritos')->name('home.favoritos');
+
+Route::get('/produtos','HomeController@produtos')->name('home.produtos');
