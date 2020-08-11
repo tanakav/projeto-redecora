@@ -3,7 +3,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Cliente;
-use Ramsey\Uuid\Type\Integer;
 use Faker\Generator as Faker;
 
 $factory->define(Cliente::class, function ($faker) {
