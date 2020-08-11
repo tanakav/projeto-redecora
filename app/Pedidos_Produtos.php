@@ -8,4 +8,5 @@ class Pedidos_Produtos extends Model
 {
     //
     protected $table="pedidos_produtos";
+
 }
