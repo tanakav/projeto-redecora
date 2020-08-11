@@ -18090,9 +18090,8 @@ __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Documents\workspace\Digital House\projeto-redecora\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Documents\workspace\Digital House\projeto-redecora\resources\sass\app.scss */"./resources/sass/app.scss");
-
+__webpack_require__(/*! D:\Desktop\projeto-redecora\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Desktop\projeto-redecora\resources\sass\app.scss */"./resources/sass/app.scss");
 
 /***/ })
 
