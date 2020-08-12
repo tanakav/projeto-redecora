@@ -1,7 +1,7 @@
 <div class="container-fluid row" style="padding: 0; margin: 0;">
     <div class="col-4 brand text-center">
-        <a class="navbar-brand mr-auto" href="{{ route('home.home') }}"><img src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt=""
-                class="img-fluid"></a>
+        <a class="navbar-brand mr-auto" href="{{ route('home.home') }}"><img
+                src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt="" class="img-fluid"></a>
     </div>
 
     <div class="col-8 d-flex" id="header">
@@ -23,7 +23,8 @@
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('home.index') }}">Home <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home.quemSomos') }}">Quem Somos</a>
@@ -32,16 +33,15 @@
                             <a class="nav-link" href="{{ route('home.produtos') }}">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.favoritos') }}"><img src="imagens/Header/heart.png" alt=""
-                                    class="icone"></a>
+                            <a class="nav-link" href="{{ route('home.favoritos') }}"><img
+                                    src="imagens/Header/heart.png" alt="" class="icone"></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="imagens/Header/shopping-cart.png" alt=""
                                     class="icone"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="add-user-form.php"><img src="imagens/Header/user.png" alt=""
-                                    class="icone"></a>
+                            <a class="nav-link" href="#"><img src="imagens/Header/user.png" alt="" class="icone"></a>
                         </li>
                     </ul>
                 </div>
