@@ -13,19 +13,36 @@ class MaterialSeeder extends Seeder
     public function run()
     {
         Material::create([
-            'descricao' => 'material1'
+            'descricao' => 'Caixote'
         ]);
 
         Material::create([
-            'descricao' => 'material2'
+            'descricao' => 'Lata'
         ]);
 
         Material::create([
-            'descricao' => 'material3'
+            'descricao' => 'Barril'
         ]);
         
         Material::create([
-            'descricao' => 'material4'
+            'descricao' => 'Pallet'
         ]);
+
+        Material::create([
+            'descricao' => 'Pneu'
+        ]);
+
+        Material::create([
+            'descricao' => 'Madeira'
+        ]);
+
+        Material::create([
+            'descricao' => 'Ferro'
+        ]);
+
+        Material::create([
+            'descricao' => 'Outros'
+        ]);
+
     }
 }
