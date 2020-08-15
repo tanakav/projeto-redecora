@@ -14,7 +14,7 @@ class Produto extends Model
 
     public function categorias()
     {
-        return $this->hasMany(Categoria::class,'produtos_categorias');
+        return $this->belongsToMany(Categoria::class,'produtos_categorias');
     }    
 
     public function cor()
@@ -24,12 +24,12 @@ class Produto extends Model
 
     public function material()
     {
-        return $this->belongsTo(Material::class);
+        return $this->belongsTo(Material::class,'materials_id');
     }
 
     public function fornecedor()
     {
-        return $this->belongsTo(Fornecedor::class,'fornecedores_id','id'); //duvida
+        return $this->belongsTo(Fornecedor::class,'fornecedores_id'); //duvida
     }
 
     public function imagem()
