@@ -10,7 +10,7 @@ class Fornecedor extends Model
 
     public function enderecos()
     {
-        return $this->hasMany(Enderecos::class,'fornecedores_enderecos','fornecedores_id','enderecos_id'); //duvida
+        return $this->belongsToMany(Enderecos::class,'fornecedores_enderecos','fornecedores_id'); //duvida
     }
 
     public function produtos()

@@ -11,6 +11,6 @@ class Color extends Model
 
     public function produtos()
     {
-        return $this->belongsToMany(Produto::class); //duvida
+        return $this->hasMany(Produto::class); //duvida
     }
 }

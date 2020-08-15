@@ -19,12 +19,12 @@ class Produto extends Model
 
     public function cor()
     {
-        return $this->hasOne(Cor::class,'cores_id','id'); //duvida
+        return $this->belongsTo(Cor::class,'cores_id','id'); //duvida
     }
 
     public function material()
     {
-        return $this->hasOne(Material::class);
+        return $this->belongsTo(Material::class);
     }
 
     public function fornecedor()
