@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Cliente;
 use App\Fornecedor;
+use App\Endereco;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,10 +16,14 @@ class DatabaseSeeder extends Seeder
     {
          factory(Cliente::class,10)->create();
          factory(Fornecedor::class,10)->create();
-         $this->call(CategoriaSeeder::class);
-         $this->call(MaterialSeeder::class);
-         $this->call(CorSeeder::class);
-         $this->call(ProdutoSeeder::class);
+         factory(Endereco::class,10)->create();
+
+         $this->call([
+            CategoriaSeeder::class,
+            MaterialSeeder::class,
+            CorSeeder::class,
+            ProdutoSeeder::class
+         ]);
          
     }
 }
