@@ -1,5 +1,6 @@
 <?php
 
+use App\Categoria;
 use Illuminate\Database\Seeder;
 use App\Produto;
 
@@ -170,6 +171,14 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);         
+        ]);        
+
+        $categorias = Categoria::all();
+        
+        App\Produto::all()->each(function ($produto) use ($categorias) { 
+            $produto->categorias()->attach(
+                $categorias->random(rand(1, 2))->pluck('id')->toArray()
+            ); 
+        });
     }
 }

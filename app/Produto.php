@@ -9,12 +9,12 @@ class Produto extends Model
     //
     public function pedidos()
     {
-        return $this->belongsToMany(Pedido::class,'pedidos_produtos');
+        return $this->belongsToMany(Pedido::class,'pedidos_produtos','produtos_id','pedidos_id');
     }
 
     public function categorias()
     {
-        return $this->belongsToMany(Categoria::class,'produtos_categorias');
+        return $this->belongsToMany(Categoria::class,'produtos_categorias','produtos_id','categorias_id');
     }    
 
     public function cor()
