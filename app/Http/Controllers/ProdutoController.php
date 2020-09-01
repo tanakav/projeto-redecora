@@ -25,24 +25,22 @@ class ProdutoController extends Controller
 
         $cart = session()->get('cart');
 
-        if(!$cart){
+        if(!$cart || !isset($cart[$id])){
             $cart =[
                 $id =>[
                     'quantidade' => 1
                 ]
             ];
             session()->put('cart',$cart);
-
-            return redirect()->back()->with('success', 'Produto adicionado ao carrinho!');
         }
 
         if(isset($cart[$id])){
             $cart[$id]['quantidade']++;
 
             session()->put('cart', $cart);
-
         }
 
+        return redirect()->back()->with('success', 'Produto adicionado ao carrinho!');
 
     }
 }
