@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function home(){
         return view('index');
     }
-    
+
     public function quemSomos(){
         return view('quemsomos');
     }
@@ -20,10 +20,6 @@ class HomeController extends Controller
 
     public function favoritos(){
         return view('favoritos');
-    }
-
-    public function produtos(){
-        return view('produtos');
     }
 
 }

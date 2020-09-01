@@ -32,7 +32,7 @@
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#}"><img src="Imagens/Categorias/Inspire-se - Sustentabilidade.png" alt=""
+                <a class="nav-link" href="#"><img src="Imagens/Categorias/Inspire-se - Sustentabilidade.png" alt=""
                         class="img-fluid"></a>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="carousel-item active">
                 <div class="row">
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -105,7 +105,7 @@
             <div class="carousel-item">
                 <div class="row">
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -157,7 +157,7 @@
             <div class="carousel-item">
                 <div class="row">
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -191,7 +191,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -212,7 +212,7 @@
             <div class="carousel-item">
                 <div class="row">
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -229,7 +229,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 pb-3 mb-3">
-                        <div class="card" style="width: 18rem col-md-4 text-center card;">
+                        <div class="card col-md-4 text-center card" style="width: 18rem;">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">

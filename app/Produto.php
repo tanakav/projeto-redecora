@@ -6,7 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    //
+    protected $guarded = [];
+
+    public function filtros($filtros){
+        if($filtros === null){
+            return Produto::all();
+        }
+
+        return Produto::whereHas('categorias', function ($query) use ($filtros){
+           $query->whereIn('id',$filtros);
+        })->get();
+    }
+
     public function pedidos()
     {
         return $this->belongsToMany(Pedido::class,'pedidos_produtos','produtos_id','pedidos_id');
@@ -15,7 +26,7 @@ class Produto extends Model
     public function categorias()
     {
         return $this->belongsToMany(Categoria::class,'produtos_categorias','produtos_id','categorias_id');
-    }    
+    }
 
     public function cor()
     {

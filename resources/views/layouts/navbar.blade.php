@@ -15,7 +15,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <form class="form-inline" action="{{ route('home.produtos') }}" method="get">
+                    <form class="form-inline" action="{{ route('produtos.index') }}" method="get">
                         <input class="form-control form-control-sm mr-sm-1" type="search" placeholder="Pesquisar..."
                             name="pesquisar">
                         <button class="btn btn-outline-light btn-sm mr-sm-4" type="submit"><img
@@ -30,7 +30,7 @@
                             <a class="nav-link" href="{{ route('home.quemSomos') }}">Quem Somos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.produtos') }}">Produtos</a>
+                            <a class="nav-link" href="{{ route('produtos.index') }}">Produtos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home.favoritos') }}"><img

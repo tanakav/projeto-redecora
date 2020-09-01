@@ -55,14 +55,53 @@
             earum veniam ad harum omnis</p>
         <div id="comprar-produto">
             <h1 id="preco-produto" class="">R$ X,xx</h1>
-            <button href="#"><button id="btn-comprar" class="btn btn-success"><img class="icone"
+           <button id="btn-comprar" class="btn btn-success"><img class="icone"
                         src="imagens header\shopping-cart.svg" alt="Adicionar ao Carrinho">
                     Comprar</button></a>
-                <a id="btn-adc-fav" href="wishlist.html"><img class="icone" src="Imagens\Header\heart verde claro.png"
+                <a id="btn-add-fav"><img class="icone" src="Imagens\Header\heart verde claro.png"
                         alt="Adicionar a favoritos"> Adicionar aos
                     Favoritos</a>
         </div>
     </div>
 </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        let btn_comprar = document.getElementById('btn-comprar');
+
+        btn_comprar.addEventListener('click', (e)=>{
+            e.preventDefault();
+            addToCart();
+        });
+
+        function addToCart(){
+            let route = '{{route('produtos.addToCart')}}';
+            let CSRF_TOKEN = '{{csrf_token}}';
+
+            $.ajax({
+                type: 'POST',
+                url: route,
+                data: {
+                    id: '{{$produtos->id}}',
+                    _token: CSRF_TOKEN
+                },
+                dataType: 'json',
+                beforeSend: function(){
+
+                },
+                success: function(){
+
+                },
+                error: function(){
+
+                },
+                complete: function(){
+
+                }
+            });
+        }
+
+    </script>
 @endsection

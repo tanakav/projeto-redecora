@@ -26,4 +26,4 @@ Route::get('/contato','HomeController@contato')->name('home.contato');
 
 Route::get('/favoritos','HomeController@favoritos')->name('home.favoritos');
 
-Route::get('/produtos','HomeController@produtos')->name('home.produtos');
+Route::get('/produtos','ProdutoController@index')->name('produtos.index');
