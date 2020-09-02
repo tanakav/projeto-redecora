@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        return view('index');
+        return view('index',['titulo'=>'Redecora']);
     }
 
     public function quemSomos(){
@@ -16,10 +16,6 @@ class HomeController extends Controller
 
     public function contato(){
         return view('contato');
-    }
-
-    public function favoritos(){
-        return view('favoritos');
-    }
+    }    
 
 }

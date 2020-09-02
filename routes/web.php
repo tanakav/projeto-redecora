@@ -14,16 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index',['titulo'=>'Redecora']);
-})->name('home.index');
+// Route::get('/', function () {
+//     return view('index',['titulo'=>'Redecora']);
+// })->name('home.index');
 
-Route::get('/home', 'HomeController@home')->name('home.home');
+Route::name('home.')->group(function(){
+    Route::get('/','HomeController@home')->name('index');
+    Route::get('/home', 'HomeController@home')->name('index');
+    Route::get('/quemsomos','HomeController@quemSomos')->name('quemSomos');
+    Route::get('/contato','HomeController@contato')->name('contato');
+});
 
-Route::get('/quemsomos','HomeController@quemSomos')->name('home.quemSomos');
-
-Route::get('/contato','HomeController@contato')->name('home.contato');
-
-Route::get('/favoritos','HomeController@favoritos')->name('home.favoritos');
-
-Route::get('/produtos','ProdutoController@index')->name('produtos.index');
+Route::name('produtos.')->group(function(){
+    Route::get('/produtos','ProdutoController@index')->name('index');
+    Route::get('/favoritos','HomeController@favoritos')->name('favoritos');
+});

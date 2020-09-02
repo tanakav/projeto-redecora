@@ -18,8 +18,12 @@ class ProdutoController extends Controller
         ]);
     }
 
+    public function favoritos(){
+        return view('favoritos');
+    }
+
     //https://webmobtuts.com/backend-development/creating-a-shopping-cart-with-laravel/
-    public function addToCard(Request $request){
+    public function addToCart(Request $request){
         $produto = Product::find($request->id);
         $id = $request->id;
 

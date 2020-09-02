@@ -1,6 +1,6 @@
 <div class="container-fluid row" style="padding: 0; margin: 0;">
     <div class="col-4 brand text-center">
-        <a class="navbar-brand mr-auto" href="{{ route('home.home') }}"><img
+        <a class="navbar-brand mr-auto" href="{{ route('home.index') }}"><img
                 src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt="" class="img-fluid"></a>
     </div>
 
@@ -33,7 +33,7 @@
                             <a class="nav-link" href="{{ route('produtos.index') }}">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.favoritos') }}"><img
+                            <a class="nav-link" href="{{ route('produtos.favoritos') }}"><img
                                     src="imagens/Header/heart.png" alt="" class="icone"></a>
                         </li>
                         <li class="nav-item">
