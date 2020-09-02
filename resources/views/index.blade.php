@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@section('styles')
+    <style>
+        .carousel-card-div{
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-card{
+            width: 20rem;
+        }
+    </style>
+@endsection
+
 @section('conteudo')
 <div>
     <a href="{{ route('home.quemSomos') }}"></a>
@@ -49,8 +62,8 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
+                    <div class="col-md-4 pb-3 mb-3 carousel-card-div">
+                        <div class="card carousel-card">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -66,8 +79,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
+                    <div class="col-md-4 pb-3 mb-3 carousel-card-div">
+                        <div class="card carousel-card">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -83,8 +96,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
+                    <div class="col-md-4 pb-3 mb-3 carousel-card-div">
+                        <div class="card carousel-card">
                             <div>
                                 <img src="imagens/Header/heart verde claro.png" alt=""
                                     class="icone img-fluid wishlist-icon">
@@ -102,169 +115,8 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/LatasBarris/berçobarril (1).jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/LatasBarris/color-reclicle.jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/LatasBarris/decoração-bares.jpg" alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Palets/decoração-para-varanda-com-sofá-de-pallets.jpg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Palets/modelo-de-sofá-de-pallets-com-futon.jpg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Palets/sala-de-estar-rústica-com-sofá-de-pallets.jpg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row">
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Pneus/06-Revisteiro-vermelho-feito-com-pneu-672x483.jpeg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Pneus/decoração-com-puff-feito-de-pneu-revestido-com-corda-de-sisal-e-pés-palito.jpg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 pb-3 mb-3">
-                        <div class="card col-md-4 text-center card" style="width: 18rem;">
-                            <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
-                                    class="icone img-fluid wishlist-icon">
-                                <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Pneus/moveis-reciclados-confira-ideias-originais-e-criativas-8.jpg"
-                                    alt="Card image cap">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Nome do produto</h5>
-                                <p class="card-text">Valor</p>
-                                <p class="card-text">Parcelamento</p>
-                                <a href="#" class="btn btn-success">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
