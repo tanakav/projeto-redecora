@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('styles')
+<style>
+    .card-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+@endsection
+
 @section('conteudo')
 
 <div class="container m-3" id="detalhe-produto">
@@ -32,7 +42,7 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="{{$categoria->id}}" id="{{$categoria->descricao}}" name="categorias[]">
                 <label class="form-check-label" for="{{$categoria->descricao}}">
-                    {{$categoria->descricao}}
+                    {{ $categoria->descricao }}
                 </label>
             </div>
             @endforeach
@@ -92,19 +102,22 @@
             @foreach($produtos as $produto)
                 <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
                     <div>
-                        <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid"
-                             style="position:absolute;left:70%; top:325px;">
-                        <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid"
-                             style="position:absolute;left:85%; top:325px;">
-                        <img class="card-img-top img-fluid" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
+                        <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
                              alt="Card image cap">
                     </div>
 
                     <div class="card-body">
-                        <h5 class="card-title">Nome do produto</h5>
-                        <h6 class="card-text">Valor</h6>
+                        <h5 class="card-title">{{$produto->descricao}}</h5>
+                        <h6 class="card-text">{{$produto->preco}}</h6>
                         <h6 class="card-text">Parcelamento</h6>
+
+                    </div>
+                    <div class="card-footer">
                         <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
+                        <div>
+                            <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid">
+                            <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid">
+                        </div>
                     </div>
                 </div>
 

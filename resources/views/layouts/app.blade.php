@@ -8,6 +8,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <link rel="shortcut icon" href="{{ asset('imagens/Logo/favicon.png') }}" />
     <title>Redecora</title>
+    @yield('styles')
 </head>
 
 <body>

@@ -13,16 +13,16 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         Categoria::create([
-            'descricao' => 'moveis'
+            'descricao' => 'Móveis'
         ]);
         Categoria::create([
-            'descricao' => 'decoracao'
+            'descricao' => 'Decoração'
         ]);
         Categoria::create([
-            'descricao' => 'ambientes'
+            'descricao' => 'Ambientes'
         ]);
         Categoria::create([
-            'descricao' => 'novidades'
+            'descricao' => 'Novidades'
         ]);
     }
 }

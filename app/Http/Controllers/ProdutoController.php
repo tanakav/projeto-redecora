@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Cor;
 use App\Material;
+use App\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
