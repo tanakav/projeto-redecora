@@ -7,10 +7,10 @@
 </div>
 <div id="caminho_produto" class="caminho">
     <ul class="list-inline">
-        <li class="list-inline-item"><a href="index.html">Home</a> /</li>
+        <li class="list-inline-item"><a href="{{route('home.index')}}">Home</a> /</li>
         <li class="list-inline-item"><a href="#">Categorias</a> /</li>
         <li class="list-inline-item"><a href="#">Categoria_Produto</a> /</li>
-        <li class="list-inline-item">Detalhe_Produto</li>
+        <li class="list-inline-item">{{$produto->descricao}}</li>
     </ul>
 </div>
 <div class="row">
@@ -77,14 +77,14 @@
         });
 
         function addToCart(){
-            let route = '{{route('produtos.addToCart')}}';
+            let route = '{{route('produtos.comprar')}}';
             let CSRF_TOKEN = '{{csrf_token}}';
 
             $.ajax({
                 type: 'POST',
                 url: route,
                 data: {
-                    id: '{{$produtos->id}}',
+                    id: '{{$produto->id}}',
                     _token: CSRF_TOKEN
                 },
                 dataType: 'json',

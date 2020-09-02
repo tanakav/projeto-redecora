@@ -27,5 +27,7 @@ Route::name('home.')->group(function(){
 
 Route::name('produtos.')->group(function(){
     Route::get('/produtos','ProdutoController@index')->name('index');
-    Route::get('/favoritos','HomeController@favoritos')->name('favoritos');
+    Route::get('/favoritos','ProdutoController@favoritos')->name('favoritos');
+    Route::get('/produtos/{id}','ProdutoController@show')->name('show');
+    Route::post('/produtos','ProdutoController@addToCart')->name('comprar');
 });

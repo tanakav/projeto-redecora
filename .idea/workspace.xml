@@ -24,8 +24,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/projeto-redecora.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projeto-redecora.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProdutoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProdutoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/CategoriaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoriaSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
@@ -35,7 +33,6 @@
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/produtos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/produtos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quemsomos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quemsomos.blade.php" afterDir="false" />
->>>>>>> 60fa1448b255062b46ff56c19ddb6197f5f9a78b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

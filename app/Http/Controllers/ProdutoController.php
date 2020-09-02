@@ -23,8 +23,18 @@ class ProdutoController extends Controller
         return view('favoritos');
     }
 
+    public function show(Produto $produto){
+        return view('produto')->with([
+            'produto' => $produto
+        ]);
+    }
+
     //https://webmobtuts.com/backend-development/creating-a-shopping-cart-with-laravel/
+    //Tentar colocar no Model
     public function addToCart(Request $request){
+
+        dd($request->all());
+        
         $produto = Product::find($request->id);
         $id = $request->id;
 

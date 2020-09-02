@@ -100,10 +100,12 @@
     <div class="col-lg-9">
         <div class="row">
             @foreach($produtos as $produto)
-                <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
+                <!-- <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
                     <div>
-                        <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
+                        <a href="{{route('show',$produto->id)}}">
+                            <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
                              alt="Card image cap">
+                        </a>
                     </div>
 
                     <div class="card-body">
@@ -113,13 +115,14 @@
 
                     </div>
                     <div class="card-footer">
-                        <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
+                        <a href="#" class="btn btn-success">Comprar</a>
                         <div>
                             <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid">
                             <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid">
                         </div>
                     </div>
-                </div>
+                </div> -->
+                @include('components.card-produto',['produto' => $produto])
 
             @endforeach
 
