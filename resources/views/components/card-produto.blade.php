@@ -1,6 +1,6 @@
 <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
                     <div>
-                        <a href="{{route('show',$produto->id)}}">
+                        <a href="{{route('produtos.show',$produto->id)}}">
                             <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
                              alt="Card image cap">
                         </a>
@@ -30,7 +30,7 @@
 
         function addToCart(){
             let route = '{{route('produtos.comprar')}}';
-            let CSRF_TOKEN = '{{csrf_token}}';
+            let CSRF_TOKEN = '';
 
             $.ajax({
                 type: 'POST',

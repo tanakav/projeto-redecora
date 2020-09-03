@@ -1,7 +1,7 @@
 <div class="container-fluid row" style="padding: 0; margin: 0;">
     <div class="col-4 brand text-center">
         <a class="navbar-brand mr-auto" href="{{ route('home.index') }}"><img
-                src="imagens/Header/LogoUmaLinhaColorVerdeB.jpeg" alt="" class="img-fluid"></a>
+                src="{{asset('imagens/Header/LogoUmaLinhaColorVerdeB.jpeg')}}" alt="" class="img-fluid"></a>
     </div>
 
     <div class="col-8 d-flex" id="header">
@@ -19,7 +19,7 @@
                         <input class="form-control form-control-sm mr-sm-1" type="search" placeholder="Pesquisar..."
                             name="pesquisar">
                         <button class="btn btn-outline-light btn-sm mr-sm-4" type="submit"><img
-                                src="imagens/Header/search.png" alt="" class="icone"></button>
+                                src="{{asset('imagens/Header/search.png')}}" alt="" class="icone"></button>
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item active">
@@ -34,14 +34,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('produtos.favoritos') }}"><img
-                                    src="imagens/Header/heart.png" alt="" class="icone"></a>
+                                    src="{{asset('imagens/Header/heart.png')}}" alt="" class="icone"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="imagens/Header/shopping-cart.png" alt=""
+                            <a class="nav-link" href="#"><img src="{{asset('imagens/Header/shopping-cart.png')}}" alt=""
                                     class="icone"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="imagens/Header/user.png" alt="" class="icone"></a>
+                            <a class="nav-link" href="#"><img src="{{asset('imagens/Header/user.png')}}" alt="" class="icone"></a>
                         </li>
                     </ul>
                 </div>

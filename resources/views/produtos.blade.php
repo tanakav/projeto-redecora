@@ -12,7 +12,7 @@
 
 @section('conteudo')
 
-<div class="container m-3" id="detalhe-produto">
+<div class="container m-3">
     <div class="row">
         <div class="col-lg-4 text-left">
             <h1 class="text-left">Produtos</h1>
@@ -100,28 +100,7 @@
     <div class="col-lg-9">
         <div class="row">
             @foreach($produtos as $produto)
-                <!-- <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                    <div>
-                        <a href="{{route('show',$produto->id)}}">
-                            <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
-                             alt="Card image cap">
-                        </a>
-                    </div>
 
-                    <div class="card-body">
-                        <h5 class="card-title">{{$produto->descricao}}</h5>
-                        <h6 class="card-text">{{$produto->preco}}</h6>
-                        <h6 class="card-text">Parcelamento</h6>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-success">Comprar</a>
-                        <div>
-                            <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid">
-                            <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid">
-                        </div>
-                    </div>
-                </div> -->
                 @include('components.card-produto',['produto' => $produto])
 
             @endforeach
