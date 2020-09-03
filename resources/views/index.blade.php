@@ -20,32 +20,32 @@
     <div class="d-flex flex-wrap justify-content-around">
         <div class="py-2 mb-2 text-center ">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Móveis.png" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Móveis.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Decoração.png" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Decoração.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Ambientes.png" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Ambientes.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Promoção.png" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Promoção.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Novidades.png" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Novidades.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="Imagens/Categorias/Inspire-se - Sustentabilidade.png" alt=""
+                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Inspire-se - Sustentabilidade.png')}}" alt=""
                         class="img-fluid"></a>
             </div>
         </div>
@@ -65,10 +65,10 @@
                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
+                                <img src="{{asset('imagens/Header/heart verde claro.png')}}" alt=""
                                     class="icone img-fluid wishlist-icon">
                                 <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Caixotes/abre-pallets-viram-moveis-768x661.jpeg"
+                                    src="{{asset('Imagens/Produtos/Caixotes/abre-pallets-viram-moveis-768x661.jpeg')}}"
                                     alt="Card image cap">
                             </div>
                             <div class="card-body">
@@ -82,10 +82,10 @@
                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
+                                <img src="{{asset('imagens/Header/heart verde claro.png')}}" alt=""
                                     class="icone img-fluid wishlist-icon">
                                 <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Caixotes/criado-mudo-de-caixote-de-feira.jpg"
+                                    src="{{asset('Imagens/Produtos/Caixotes/criado-mudo-de-caixote-de-feira.jpg')}}"
                                     alt="Card image cap">
                             </div>
                             <div class="card-body">
@@ -99,10 +99,10 @@
                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
-                                <img src="imagens/Header/heart verde claro.png" alt=""
+                                <img src="{{asset('imagens/Header/heart verde claro.png')}}" alt=""
                                     class="icone img-fluid wishlist-icon">
                                 <img class="card-img-top img-fluid"
-                                    src="Imagens/Produtos/Caixotes/mesinha-de-canto-rústica-feita-com-caixote-de-feira.jpg"
+                                    src="{{asset('Imagens/Produtos/Caixotes/mesinha-de-canto-rústica-feita-com-caixote-de-feira.jpg')}}"
                                     alt="Card image cap">
                             </div>
                             <div class="card-body">
