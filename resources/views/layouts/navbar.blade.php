@@ -1,7 +1,7 @@
 <div class="container-fluid row" style="padding: 0; margin: 0;">
     <div class="col-4 brand text-center">
         <a class="navbar-brand mr-auto" href="{{ route('home.index') }}"><img
-                src="{{asset('imagens/Header/LogoUmaLinhaColorVerdeB.jpeg')}}" alt="" class="img-fluid"></a>
+                src="{{asset('imagens/Header/logcor.jpg')}}" alt="" class="img-fluid"></a>
     </div>
 
     <div class="col-8 d-flex" id="header">
