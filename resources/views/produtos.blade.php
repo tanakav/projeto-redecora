@@ -36,11 +36,15 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <form action="" method="get">
+        <form action="{{route('produtos.index')}}" method="get">
             <p><br>Categorias</p>
             @foreach($categorias as $categoria)
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{$categoria->id}}" id="{{$categoria->descricao}}" name="categorias[]">
+                <input class="form-check-input" type="checkbox"
+                       value="{{$categoria->id}}"
+                       id="{{$categoria->descricao}}"
+                       name="categorias[{{$categoria->id}}]"
+                       @if(is_array(old('categorias')) && in_array($categoria->id, old('categorias'))) checked @endif>
                 <label class="form-check-label" for="{{$categoria->descricao}}">
                     {{ $categoria->descricao }}
                 </label>
@@ -51,7 +55,12 @@
             <p><br>Material</p>
             @foreach($materiais as $material)
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{$material->id}}" id="{{$material->descricao}}" name="materiais[]">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="{{$material->id}}"
+                       id="{{$material->descricao}}"
+                       name="material[{{$material->id}}]"
+                       @if(is_array(old('material')) && in_array($material->id, old('material'))) checked @endif>
                 <label class="form-check-label" for="{{$material->descricao}}">
                     {{$material->descricao}}
                 </label>
@@ -87,23 +96,32 @@
             <p><br>Cor</p>
             @foreach($cores as $cor)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="{{$cor->id}}" id="{{$cor->descricao}}" name="cores[]">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="{{$cor->id}}"
+                           id="{{$cor->descricao}}"
+                           name="cor[{{$cor->id}}]"
+                           @if(is_array(old('cor')) && in_array($cor->id, old('cor'))) checked @endif>
                     <label class="form-check-label" for="{{$cor->descricao}}">
                         {{$cor->descricao}}
                     </label>
                 </div>
             @endforeach
+            <div>
+                <button>Filtrar</button>
+            </div>
 
         </form>
     </div>
 
     <div class="col-lg-9">
         <div class="row">
-            @foreach($produtos as $produto)
+            @forelse($produtos as $produto)
 
                 @include('components.card-produto',['produto' => $produto])
-
-            @endforeach
+            @empty
+                <div><h4>nenhum produto encontrado</h4></div>
+            @endforelse
 
         </div>
 
@@ -111,6 +129,5 @@
 
 </div>
 
-
-
 @endsection
+

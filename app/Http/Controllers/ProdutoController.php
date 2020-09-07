@@ -8,12 +8,22 @@ use App\Fornecedor;
 use App\Material;
 use App\Produto;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
 
 class ProdutoController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        if(empty($request->all())){
+            $produtos = Produto::all();
+        }else{
+            $produtos = Produto::filtro()->get();
+        }
+
+        $request->flash();
+
         return view('produtos')->with([
-            'produtos'      => Produto::all(),
+            'produtos'      => $produtos,
             'categorias'    => Categoria::all(),
             'materiais'     => Material::all(),
             'cores'         => Cor::all()

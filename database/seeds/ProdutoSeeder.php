@@ -30,9 +30,9 @@ class ProdutoSeeder extends Seeder
             'valor_desconto' => 0.00,
             'fornecedores_id' => 1,
             'cores_id' => 1,
-            'materials_id' => 1
-        ]);   
-        
+            'materials_id' => 2
+        ]);
+
         Produto::create([
             'descricao' => 'Nicho de parede (pintado)',
             'descricao_completa' => 'Nicho de parede feito de caixotes e pintado',
@@ -40,9 +40,9 @@ class ProdutoSeeder extends Seeder
             'valor_desconto' => 0.00,
             'fornecedores_id' => 1,
             'cores_id' => 1,
-            'materials_id' => 1
-        ]); 
-        
+            'materials_id' => 2
+        ]);
+
         Produto::create([
             'descricao' => 'Mesa decorativa com 4 pés',
             'descricao_completa' => 'Mesa decorativa feita com caixote e 4 pés de aço',
@@ -51,8 +51,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Estante com 6 nichos',
             'descricao_completa' => 'Estante com 6 nichos feito de caixotes e pés suspensos',
@@ -61,8 +61,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Estante com 12 nichos',
             'descricao_completa' => 'Estante com 12 nichos feito de caixotes',
@@ -71,8 +71,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Berço barril',
             'descricao_completa' => 'Berço em formato de barril',
@@ -91,8 +91,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);   
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Mesa bistrô',
             'descricao_completa' => 'Mesa bistrô feita com latão.',
@@ -101,8 +101,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Mesa bistrô com vidro',
             'descricao_completa' => 'Mesa bistrô feita com barril e tampão de vidro',
@@ -111,8 +111,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Mesa decorativa',
             'descricao_completa' => 'Mesa decorativa (estilo bistrô) feita de latão.',
@@ -121,8 +121,8 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
-        
+        ]);
+
         Produto::create([
             'descricao' => 'Conjunto mesa + banquetas de madeira',
             'descricao_completa' => 'Conjunto mesa + banquetas feitas com madeira de demolição e barril',
@@ -131,7 +131,7 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]); 
+        ]);
 
         Produto::create([
             'descricao' => 'Sofá de palet com rodinhas',
@@ -141,7 +141,7 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);         
+        ]);
 
         Produto::create([
             'descricao' => 'Sofá de palet fixo',
@@ -151,7 +151,7 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);         
+        ]);
 
         Produto::create([
             'descricao' => 'Sofá de palet duplo',
@@ -161,7 +161,7 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);         
+        ]);
 
         Produto::create([
             'descricao' => 'Sofá de palet com rodinhas e encosto lateral',
@@ -171,14 +171,14 @@ class ProdutoSeeder extends Seeder
             'fornecedores_id' => 1,
             'cores_id' => 1,
             'materials_id' => 1
-        ]);        
+        ]);
 
         $categorias = Categoria::all();
-        
-        App\Produto::all()->each(function ($produto) use ($categorias) { 
+
+        App\Produto::all()->each(function ($produto) use ($categorias) {
             $produto->categorias()->attach(
                 $categorias->random(rand(1, 2))->pluck('id')->toArray()
-            ); 
+            );
         });
     }
 }

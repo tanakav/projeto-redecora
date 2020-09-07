@@ -8,14 +8,27 @@ class Produto extends Model
 {
     protected $guarded = [];
 
-    public function filtros($filtros){
-        if($filtros === null){
-            return Produto::all();
+    public function scopeFiltro($query){
+
+        if(request('categorias')){
+            $query->whereHas('categorias', function ($query){
+                $query->whereIn('id',request('categorias'));
+            });
         }
 
-        return Produto::whereHas('categorias', function ($query) use ($filtros){
-           $query->whereIn('id',$filtros);
-        })->get();
+        if(request('material')){
+            $query->whereHas('material', function ($query){
+                $query->whereIn('id',request('material'));
+            });
+        }
+
+        if(request('cor')){
+            $query->whereHas('cor', function ($query){
+                $query->whereIn('id',request('cor'));
+            });
+        }
+
+        return $query;
     }
 
     public function pedidos()
