@@ -69,25 +69,45 @@
 
             <p><br>Valor</p>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="lowestprice" id="lowestprice" name="filtroValor[]">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="lowestprice"
+                       id="lowestprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("lowestprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="lowestprice">
                     Até R$ 200,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="lowprice" id="lowprice" name="filtroValor[]">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="lowprice"
+                       id="lowprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("lowprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="lowprice">
                     De R$ 200,00 até R$ 400,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="midprice" id="midprice" name="filtroValor[]">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="midprice"
+                       id="midprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("midprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="midprice">
                     De R$ 400,00 até R$ 600,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="highprice" id="highprice" name="filtroValor[]">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="highprice"
+                       id="highprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("highprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="highprice">
                     Acima de R$ 600,00
                 </label>

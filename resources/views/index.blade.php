@@ -20,33 +20,22 @@
     <div class="d-flex flex-wrap justify-content-around">
         <div class="py-2 mb-2 text-center ">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Móveis.png')}}" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="/produtos?categorias%5B1%5D=1"><img src="{{asset('Imagens/Categorias/Móveis.png')}}" alt="" class="img-fluid">uhiuhiu</a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Decoração.png')}}" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="/produtos?categorias%5B2%5D=2"><img src="{{asset('Imagens/Categorias/Decoração.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Ambientes.png')}}" alt="" class="img-fluid"></a>
+                <a class="nav-link" href="/produtos?categorias%5B3%5D=3"><img src="{{asset('Imagens/Categorias/Ambientes.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
         <div class="py-2 mb-2 text-center">
             <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Promoção.png')}}" alt="" class="img-fluid"></a>
-            </div>
-        </div>
-        <div class="py-2 mb-2 text-center">
-            <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Novidades.png')}}" alt="" class="img-fluid"></a>
-            </div>
-        </div>
-        <div class="py-2 mb-2 text-center">
-            <div class="categorias">
-                <a class="nav-link" href="#"><img src="{{asset('Imagens/Categorias/Inspire-se - Sustentabilidade.png')}}" alt=""
-                        class="img-fluid"></a>
+                <a class="nav-link" href="/produtos?categorias%5B4%5D=4"><img src="{{asset('Imagens/Categorias/Novidades.png')}}" alt="" class="img-fluid"></a>
             </div>
         </div>
     </div>

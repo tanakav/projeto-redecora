@@ -28,6 +28,27 @@ class Produto extends Model
             });
         }
 
+        if(request('filtroValor')){
+            if(in_array('lowestprice',request()->filtroValor)){
+                $query->where('preco','<=',200);
+            }
+
+            if(in_array('lowprice',request()->filtroValor)){
+                $query->where('preco','>',200)
+                    ->where('preco','<=',400);
+            }
+
+            if(in_array('midprice',request()->filtroValor)){
+                $query->where('preco','>',400)
+                    ->where('preco','<=',600);
+            }
+
+            if(in_array('highprice',request()->filtroValor)){
+                $query->where('preco','>',600);
+            }
+
+        }
+
         return $query;
     }
 
