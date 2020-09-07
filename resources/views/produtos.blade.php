@@ -127,7 +127,7 @@
                     </label>
                 </div>
             @endforeach
-            <div>
+            <div class="my-3">
                 <button class="btn btn-success">Filtrar</button>
                 <a href="{{route('produtos.index')}}" class="btn btn-success" type="reset" id="btn-reset">Limpar Filtros</a>
             </div>
