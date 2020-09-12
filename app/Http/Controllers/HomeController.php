@@ -7,23 +7,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-        return view('index');
+        return view('index',['titulo'=>'Redecora']);
     }
-    
+
     public function quemSomos(){
         return view('quemsomos');
     }
 
     public function contato(){
         return view('contato');
-    }
-
-    public function favoritos(){
-        return view('favoritos');
-    }
-
-    public function produtos(){
-        return view('produtos');
-    }
+    }    
 
 }

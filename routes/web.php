@@ -14,16 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index',['titulo'=>'Redecora']);
+// Route::get('/', function () {
+//     return view('index',['titulo'=>'Redecora']);
+// })->name('home.index');
+
+Route::name('home.')->group(function(){
+    Route::get('/','HomeController@home')->name('index');
+    Route::get('/home', 'HomeController@home')->name('index');
+    Route::get('/quemsomos','HomeController@quemSomos')->name('quemSomos');
+    Route::get('/contato','HomeController@contato')->name('contato');
 });
 
-Route::get('/home', 'HomeController@home')->name('home.home');
-
-Route::get('/quemsomos','HomeController@quemSomos')->name('home.quemSomos');
-
-Route::get('/contato','HomeController@contato')->name('home.contato');
-
-Route::get('/favoritos','HomeController@favoritos')->name('home.favoritos');
-
-Route::get('/produtos','HomeController@produtos')->name('home.produtos');
+Route::name('produtos.')->group(function(){
+    Route::get('/produtos','ProdutoController@index')->name('index');
+    Route::get('/favoritos','ProdutoController@favoritos')->name('favoritos');
+    Route::get('/produtos/{id}','ProdutoController@show')->name('show');
+    Route::post('/produtos','ProdutoController@addToCart')->name('comprar');
+});

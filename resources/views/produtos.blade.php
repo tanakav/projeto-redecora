@@ -1,10 +1,18 @@
 @extends('layouts.app')
 
+@section('styles')
+<style>
+    .card-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+</style>
+@endsection
+
 @section('conteudo')
 
-<div id="conteudo" class="container my-4">
-
-<div class="container">
+<div class="container m-3">
     <div class="row">
         <div class="col-lg-4 text-left">
             <h1 class="text-left">Produtos</h1>
@@ -28,276 +36,120 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <form action="" method="get">
+        <form action="{{route('produtos.index')}}" method="get">
             <p><br>Categorias</p>
+            @foreach($categorias as $categoria)
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="furniture" id="furniture">
-                <label class="form-check-label" for="furniture">
-                    Móveis
+                <input class="form-check-input" type="checkbox"
+                       value="{{$categoria->id}}"
+                       id="{{$categoria->descricao}}"
+                       name="categorias[{{$categoria->id}}]"
+                       @if(is_array(old('categorias')) && in_array($categoria->id, old('categorias'))) checked @endif>
+                <label class="form-check-label" for="{{$categoria->descricao}}">
+                    {{ $categoria->descricao }}
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="decoration" id="decoration">
-                <label class="form-check-label" for="decoration">
-                    Decoração
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="enviroment" id="enviroment">
-                <label class="form-check-label" for="enviroment">
-                    Ambientes
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="releases" id="releases">
-                <label class="form-check-label" for="releases">
-                    Novidades
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="discount" id="discount">
-                <label class="form-check-label" for="discount">
-                    Promoções
-                </label>
-            </div>
+            @endforeach
+
 
             <p><br>Material</p>
+            @foreach($materiais as $material)
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="wood" id="wood">
-                <label class="form-check-label" for="wood">
-                    Madeira de demolição
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="{{$material->id}}"
+                       id="{{$material->descricao}}"
+                       name="material[{{$material->id}}]"
+                       @if(is_array(old('material')) && in_array($material->id, old('material'))) checked @endif>
+                <label class="form-check-label" for="{{$material->descricao}}">
+                    {{$material->descricao}}
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="cartonbox" id="cartonbox">
-                <label class="form-check-label" for="cartonbox">
-                    Caixotes
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="tire" id="tire">
-                <label class="form-check-label" for="tire">
-                    Pneus
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="pallet" id="pallet">
-                <label class="form-check-label" for="pallet">
-                    Pallets
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="metal" id="metal">
-                <label class="form-check-label" for="metal">
-                    Latas/Barris
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="other" id="other">
-                <label class="form-check-label" for="other">
-                    Outros
-                </label>
-            </div>
+            @endforeach
 
             <p><br>Valor</p>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="lowestprice" id="lowestprice">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="lowestprice"
+                       id="lowestprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("lowestprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="lowestprice">
                     Até R$ 200,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="lowprice" id="lowprice">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="lowprice"
+                       id="lowprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("lowprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="lowprice">
                     De R$ 200,00 até R$ 400,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="midprice" id="midprice">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="midprice"
+                       id="midprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("midprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="midprice">
                     De R$ 400,00 até R$ 600,00
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="highprice" id="highprice">
+                <input class="form-check-input"
+                       type="checkbox"
+                       value="highprice"
+                       id="highprice"
+                       name="filtroValor[]"
+                       @if(is_array(old('filtroValor')) && in_array("highprice", old('filtroValor'))) checked @endif>
                 <label class="form-check-label" for="highprice">
                     Acima de R$ 600,00
                 </label>
             </div>
 
             <p><br>Cor</p>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="natural-color" id="natural-color">
-                <label class="form-check-label" for="natural-color">
-                    Natural
-                </label>
+            @foreach($cores as $cor)
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value="{{$cor->id}}"
+                           id="{{$cor->descricao}}"
+                           name="cor[{{$cor->id}}]"
+                           @if(is_array(old('cor')) && in_array($cor->id, old('cor'))) checked @endif>
+                    <label class="form-check-label" for="{{$cor->descricao}}">
+                        {{$cor->descricao}}
+                    </label>
+                </div>
+            @endforeach
+            <div class="my-3">
+                <button class="btn btn-success">Filtrar</button>
+                <a href="{{route('produtos.index')}}" class="btn btn-success" type="reset" id="btn-reset">Limpar Filtros</a>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="colorful" id="colorful">
-                <label class="form-check-label" for="colorful">
-                    Colorido
-                </label>
-            </div>
-            <label class="chkvermelho">
-                <input type="checkbox" name="chk-vermelhor" />
-                <span></span>
-            </label>
-            <label class="chkamarelo">
-                <input type="checkbox" name="chk-amarelo" />
-                <span></span>
-            </label>
-            <label class="chkazul">
-                <input type="checkbox" name="chk-azul" />
-                <span></span>
-            </label>
-            <label class="chkmarrom">
-                <input type="checkbox" name="chk-marrom" />
-                <span></span>
-            </label>
+
         </form>
     </div>
 
     <div class="col-lg-9">
         <div class="row">
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg" alt="Card image cap">
-                </div>
+            @forelse($produtos as $produto)
 
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens/Produtos/Caixotes/abre-pallets-viram-moveis-768x661.jpeg" alt="Card image cap">
-                </div>
+                @include('components.card-produto',['produto' => $produto])
+            @empty
+                <div><h4>nenhum produto encontrado</h4></div>
+            @endforelse
 
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Pneus\puff-de-pneu-floral-bau.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Outros\Moveis-Reciclados-2.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Outros\moveis-reciclados-confira-ideias-originais-e-criativas-17.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Palets\sofá-feito-com-pallets-e-rodinhas.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Pneus\decoração-para-sala-com-puff-de-pneu-velho.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Outros\luminaria-de-papel-768x614.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
-            <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
-                <div>
-                    <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid" style="position:absolute;left:70%; top:325px;">
-                    <img src="imagens/Header/shopping-cart.svg" alt="" class="icone img-fluid" style="position:absolute;left:85%; top:325px;">
-                    <img class="card-img-top img-fluid" src="Imagens\Produtos\Outros\cesto-de-roupa-com-tampo-de-madeira-para-mesa-lateral.jpg" alt="Card image cap">
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title">Nome do produto</h5>
-                    <h6 class="card-text">Valor</h6>
-                    <h6 class="card-text">Parcelamento</h6>
-                    <a href="detalhe_produto.html" class="btn btn-success">Comprar</a>
-                </div>
-            </div>
         </div>
 
     </div>
 
 </div>
 
-</div>
-
-
 @endsection
+
+

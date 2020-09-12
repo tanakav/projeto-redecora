@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cantata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 /*
 Azul := #396273;
@@ -14,8 +15,12 @@ Cinza := #D2D3D5;
 }
 
 body {
-    font-family: 'Cantata One', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: small;
+}
+
+#content {
+    min-width: 90vw;
 }
 
 #header {
