@@ -105,8 +105,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -118,8 +116,6 @@
         </a>
     </div>
 
-
->>>>>>> carladmoreira
 </div>
 @endsection
 
