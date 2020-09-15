@@ -30,6 +30,10 @@ class ProdutoController extends Controller
         ]);
     }
 
+    public function carrinho(){
+        return view('carrinho');
+    }
+
     public function favoritos(){
         return view('favoritos');
     }
@@ -49,29 +53,50 @@ class ProdutoController extends Controller
     //Tentar colocar no Model
     public function addToCart(Request $request){
 
-        dd($request->all());
+        $produto = Produto::find($request->id);
+        $id = $request->id;
+        $cart = session()->get('cart');
+        $total = session()->get('total');
 
-        $produto = Product::find($request->id);
+        if(!$cart || !isset($cart[$id])){
+
+            $cart[$id] =[
+
+                    'produto' => $produto,
+                    'quantidade' => 1
+
+            ];
+            session()->put('cart',$cart);
+        }else{
+            $cart[$id]['quantidade']++;
+            session()->put('cart', $cart);
+        }
+
+        session()->put('total',$this->calcularTotal($cart));
+
+        return redirect()->back()->with('success', 'Produto adicionado ao carrinho!');
+    }
+
+    public function removeFromCart(Request $request){
+        $produto = Produto::find($request->id);
+
         $id = $request->id;
 
         $cart = session()->get('cart');
 
-        if(!$cart || !isset($cart[$id])){
-            $cart =[
-                $id =>[
-                    'quantidade' => 1
-                ]
-            ];
-            session()->put('cart',$cart);
+        $cart[$id]['quantidade']--;
+        session()->put('cart', $cart);
+        dd(session('cart'));
+
+        return redirect()->back()->with('success', 'Produto removido do carrinho!');
+    }
+
+    private function calcularTotal($cart){
+        $total = 0;
+        foreach($cart as $id=>$detalhes){
+            $total += $detalhes['quantidade'] * $detalhes['produto']->preco;
         }
 
-        if(isset($cart[$id])){
-            $cart[$id]['quantidade']++;
-
-            session()->put('cart', $cart);
-        }
-
-        return redirect()->back()->with('success', 'Produto adicionado ao carrinho!');
-
+        return $total;
     }
 }

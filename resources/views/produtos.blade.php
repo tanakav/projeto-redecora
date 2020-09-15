@@ -68,6 +68,7 @@
             @endforeach
 
             <p><br>Valor</p>
+
             <div class="form-check">
                 <input class="form-check-input"
                        type="checkbox"
@@ -151,5 +152,4 @@
 </div>
 
 @endsection
-
 

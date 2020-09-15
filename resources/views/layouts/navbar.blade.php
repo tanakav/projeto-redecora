@@ -37,7 +37,7 @@
                                     src="{{asset('imagens/Header/heart.png')}}" alt="" class="icone"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="{{asset('imagens/Header/shopping-cart.png')}}" alt=""
+                            <a class="nav-link" href="{{route('produtos.carrinho')}}"><img src="{{asset('imagens/Header/shopping-cart.png')}}" alt=""
                                     class="icone"></a>
                         </li>
                         <li class="nav-item">

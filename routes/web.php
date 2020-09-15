@@ -29,5 +29,6 @@ Route::name('produtos.')->group(function(){
     Route::get('/produtos','ProdutoController@index')->name('index');
     Route::get('/favoritos','ProdutoController@favoritos')->name('favoritos');
     Route::get('/produtos/{id}','ProdutoController@show')->name('show');
-    Route::post('/produtos','ProdutoController@addToCart')->name('comprar');
+    Route::post('/produtos/{id}','ProdutoController@addToCart')->name('comprar');
+    Route::get('/carrinho','ProdutoController@carrinho')->name('carrinho');
 });

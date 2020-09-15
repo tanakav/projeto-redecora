@@ -1,4 +1,7 @@
 <div class="card border-light mb-3 col-lg-4" style="width: 15rem;">
+    <form action="{{route('produtos.comprar',$produto->id)}}" method="POST">
+        @csrf
+        <input type="text" value="{{$produto->id}}" name="id" hidden>
     <div>
         <a href="{{route('produtos.show',$produto->id)}}">
             <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
@@ -19,6 +22,7 @@
             <img src="imagens/Header/heart.svg" alt="" class="icone img-fluid">
         </div>
     </div>
+    </form>
 </div>
 
 
