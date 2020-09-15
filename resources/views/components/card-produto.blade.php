@@ -4,8 +4,9 @@
         <input type="text" value="{{$produto->id}}" name="id" hidden>
     <div>
         <a href="{{route('produtos.show',$produto->id)}}">
-            <img class="card-img-top img-fluid mt-3" src="Imagens\Produtos\LatasBarris\berçobarril (1).jpg"
-             alt="Card image cap">
+            <img    class="card-img-top img-fluid mt-3"
+                    src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}"
+                    alt="Card image cap">
         </a>
     </div>
 

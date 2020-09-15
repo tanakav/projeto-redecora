@@ -2,6 +2,9 @@
 
 @section('styles')
     <style>
+        td{
+
+        }
     </style>
 @endsection
 
@@ -17,16 +20,16 @@
                     <th id="foto-produto"></th>
                     <th style="width: 50%">Produto</th>
                     <th style="width: 20%">Preco</th>
-                    <th style="width: 20%">Quantidade</th>
+                    <th style="width: 20%" class="text-center">Quantidade</th>
                     <th></th>
                 </tr>
                 @foreach(session('cart') as $id=> $detalhes)
 
                     <tr>
-                        <td></td>
+                        <td><img src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}" width="100px" class="mr-2 mt-2"></td>
                         <td>{{$detalhes['produto']->descricao}}</td>
                         <td>{{$detalhes['produto']->preco}}</td>
-                        <td>{{$detalhes['quantidade']}}</td>
+                        <td class="text-center">{{$detalhes['quantidade']}}</td>
                         <td></td>
                     </tr>
                 @endforeach
@@ -35,7 +38,16 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Total: {{session('total')}}</td>
+                    <td>
+                        <div>
+                            Total: {{session('total')}}
+                        </div>
+                        <div>
+                            <button class="btn btn-success btn-comprar">
+                                Fechar pedido
+                            </button>
+                        </div>
+                    </td>
                 </tr>
             </table>
         @else
