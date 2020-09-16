@@ -78,17 +78,33 @@ class ProdutoController extends Controller
     }
 
     public function removeFromCart(Request $request){
-        $produto = Produto::find($request->id);
-
-        $id = $request->id;
+        dd($request->all());
 
         $cart = session()->get('cart');
 
-        $cart[$id]['quantidade']--;
-        session()->put('cart', $cart);
-        dd(session('cart'));
+        if(isset($cart[$request->id])) {
+
+            unset($cart[$request->id]);
+
+            session()->put('cart', $cart);
+        }
 
         return redirect()->back()->with('success', 'Produto removido do carrinho!');
+    }
+
+    public function updateCart(Request $request){
+        dd($request->all());
+
+            $cart = session()->get('cart');
+
+            $cart[$request->id]["quantity"] = $request->quantity;
+
+            session()->put('cart', $cart);
+
+            session()->flash('success', 'Cart updated successfully');
+
+        return redirect()->back()->with('success', 'Quantidade atualizada!');
+
     }
 
     private function calcularTotal($cart){

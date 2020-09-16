@@ -31,4 +31,6 @@ Route::name('produtos.')->group(function(){
     Route::get('/produtos/{id}','ProdutoController@show')->name('show');
     Route::post('/produtos/{id}','ProdutoController@addToCart')->name('comprar');
     Route::get('/carrinho','ProdutoController@carrinho')->name('carrinho');
+    Route::patch('/atualizar-carrinho','ProdutoController@updateCart')->name('update.carrinho');
+    Route::delete('/deletar-carrinho','ProdutoController@removeFromCart')->name('delete.carrinho');
 });
