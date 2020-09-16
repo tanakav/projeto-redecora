@@ -8,7 +8,6 @@ use App\Fornecedor;
 use App\Material;
 use App\Produto;
 use Illuminate\Http\Request;
-use function GuzzleHttp\Promise\all;
 
 class ProdutoController extends Controller
 {
@@ -74,36 +73,55 @@ class ProdutoController extends Controller
 
         session()->put('total',$this->calcularTotal($cart));
 
-        return redirect()->back()->with('success', 'Produto adicionado ao carrinho!');
+        return redirect()->route('produtos.carrinho');
     }
 
     public function removeFromCart(Request $request){
-        dd($request->all());
 
         $cart = session()->get('cart');
 
-        if(isset($cart[$request->id])) {
+        try{
+            if(isset($cart[$request->id])) {
 
-            unset($cart[$request->id]);
+                unset($cart[$request->id]);
 
-            session()->put('cart', $cart);
+                session()->put('cart', $cart);
+            }
+
+            session()->put('total',$this->calcularTotal($cart));
+
+            session()->flash('success', 'Item removido do carrinho com sucesso!');
+
+            return response()->json([
+                'msg' => 'Item removido com sucesso'
+            ], 200);
+        }catch (\Exception $e){
+            return response($e, 500);
         }
-
-        return redirect()->back()->with('success', 'Produto removido do carrinho!');
     }
 
     public function updateCart(Request $request){
-        dd($request->all());
 
             $cart = session()->get('cart');
 
-            $cart[$request->id]["quantity"] = $request->quantity;
+            if($request->quantidade > 0){
+                $cart[$request->id]["quantidade"] = $request->quantidade;
+            }
 
-            session()->put('cart', $cart);
+            try{
+                session()->put('cart', $cart);
 
-            session()->flash('success', 'Cart updated successfully');
+                session()->put('total',$this->calcularTotal($cart));
 
-        return redirect()->back()->with('success', 'Quantidade atualizada!');
+                session()->flash('success', 'Carrinho atualizado com sucesso!');
+
+                return response()->json([
+                    'msg' => 'Item atualizado com sucesso'
+                ], 200);
+
+            }catch(\Exception $e){
+                return response($e, 500);
+            }
 
     }
 

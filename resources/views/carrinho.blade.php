@@ -12,7 +12,7 @@
         }
 
         td{
-           padding: 20px;
+            padding: 20px;
         }
     </style>
 
@@ -41,7 +41,7 @@
                         <td><img src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}" width="100px" class="mr-2 mt-2 img-responsive"></td>
                         <td>{{$detalhes['produto']->descricao}}</td>
                         <td class="text-center">R${{str_replace('.',',',$detalhes['produto']->preco)}}</td>
-                        <td class="text-center"><input type="number" step="1" name="" class="text-center w-25 quantidade" value="{{$detalhes['quantidade']}}"></td>
+                        <td class="text-center"><input type="number" step="1" min="1" name="" class="text-center w-25 quantidade" value="{{$detalhes['quantidade']}}"></td>
                         <td>
                             <span><a href="" class="atualizar-carrinho" data-toggle="tooltip" data-placement="top" title="Atualizar"><img class="icone-acao" src="{{asset('imagens\icons\svg\check.svg')}}" alt="" ></a></span>
                             <span><a href="" class="deletar-carrinho" data-toggle="tooltip" data-placement="top" title="Deletar"><img class="icone-acao" src="{{asset('imagens\icons\svg\trash.svg')}}" alt="" ></a></span>
@@ -78,16 +78,20 @@
 
             $.ajax({
                 url: '{{ route('produtos.update.carrinho') }}',
-                method: "patch",
+                method: "PUT",
                 data: {_token: '{{ csrf_token() }}',
                     id: elemento.dataset.id,
-                    quantity: elemento.getElementsByClassName('quantidade')[0].value
+                    quantidade: elemento.getElementsByClassName('quantidade')[0].value
                 },
                 success: function (response) {
-                    alert('Sucesso ao atualizar');
+                    console.group('Sucesso atualizar')
+                    console.log(response);
+                    console.groupEnd();
                 },
                 error: function (response){
-                    alert('Erro ao atualizar');
+                    console.group('Erro atualizar')
+                    console.log(response);
+                    console.groupEnd();
                 }
             });
         });
@@ -98,21 +102,24 @@
 
             let elemento = this.closest('tr');
 
-            if(confirm("Are you sure")) {
-                $.ajax({
-                    url: '{{ route('produtos.delete.carrinho') }}',
-                    method: "DELETE",
-                    data: {_token: '{{ csrf_token() }}',
-                        id: elemento.dataset.id
-                    },
-                    success: function (response) {
-                        alert('deletado com sucesso');
-                    },
-                    error: function (response){
-                        alert('Erro ao deletar');
-                    }
-                });
-            }
+            $.ajax({
+                url: '{{ route('produtos.delete.carrinho') }}',
+                method: "DELETE",
+                data: {_token: '{{ csrf_token() }}',
+                    id: elemento.dataset.id
+                },
+                success: function (response) {
+                    console.group('Sucesso deletar')
+                    console.log(response);
+                    console.groupEnd();
+                },
+                error: function (response){
+                    console.group('Erro deletar')
+                    console.log(response);
+                    console.groupEnd();
+                }
+            });
+
         });
 
     </script>

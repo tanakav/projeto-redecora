@@ -41,7 +41,10 @@
                 <p> <b>Fornecedor: </b>{{$fornecedor->nome_fantasia}}</p>
                 <div id="comprar-produto">
                     <h3 id="preco-produto" class="">R${{$produto->preco}}</h3>
-                    <button id="btn-comprar" class="btn btn-success">Comprar</button>
+                    <form action="{{route('produtos.comprar',$produto->id)}}" method="POST">
+                        @csrf
+                        <button id="btn-comprar" class="btn btn-success">Comprar</button>
+                    </form>
                     <a id="btn-add-fav"><img class="icone" src="{{asset('imagens\Header\heart verde claro.png')}}" alt="Adicionar a favoritos"></a>
                 </div>
             </div>
