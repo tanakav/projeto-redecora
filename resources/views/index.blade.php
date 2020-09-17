@@ -51,7 +51,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
-                    <div class="col-md-4 pb-3 mb-3 carousel-card-div">
+                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
                                 <img src="{{asset('imagens/Header/heart verde claro.png')}}" alt=""
@@ -68,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
@@ -85,6 +86,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4 pb-3 mb-3 carousel-card-div">
                         <div class="card carousel-card">
                             <div>
@@ -102,6 +104,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

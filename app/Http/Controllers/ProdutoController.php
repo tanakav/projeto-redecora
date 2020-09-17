@@ -90,8 +90,6 @@ class ProdutoController extends Controller
 
             session()->put('total',$this->calcularTotal($cart));
 
-            session()->flash('success', 'Item removido do carrinho com sucesso!');
-
             return response()->json([
                 'msg' => 'Item removido com sucesso'
             ], 200);
@@ -112,8 +110,6 @@ class ProdutoController extends Controller
                 session()->put('cart', $cart);
 
                 session()->put('total',$this->calcularTotal($cart));
-
-                session()->flash('success', 'Carrinho atualizado com sucesso!');
 
                 return response()->json([
                     'msg' => 'Item atualizado com sucesso'

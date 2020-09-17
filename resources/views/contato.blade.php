@@ -8,7 +8,7 @@
         <h1 class="text-center mb-5">ATENDIMENTO</h1>
 
         <div id="" class="mx-auto w-75">
-            <form action="" method="POST">
+            <form action="">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nome Completo" id="">
                 </div>

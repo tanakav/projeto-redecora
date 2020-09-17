@@ -14,6 +14,12 @@
         td{
             padding: 20px;
         }
+
+        .link-produto,
+        .link-produto:hover{
+            color:black;
+            text-decoration: none;
+        }
     </style>
 
 @endsection
@@ -38,8 +44,16 @@
                 <tbody>
                 @foreach(session('cart') as $id=> $detalhes)
                     <tr class="tr-produto" data-id="{{$detalhes['produto']->id}}">
-                        <td><img src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}" width="100px" class="mr-2 mt-2 img-responsive"></td>
-                        <td>{{$detalhes['produto']->descricao}}</td>
+                        <td>
+                            <a class="link-produto" href="{{route('produtos.show',$detalhes['produto']->id)}}">
+                                <img src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}" width="100px" class="mr-2 mt-2 img-responsive">
+                            </a>
+                        </td>
+                        <td>
+                            <a class="link-produto" href="{{route('produtos.show',$detalhes['produto']->id)}}">
+                                {{$detalhes['produto']->descricao}}
+                            </a>
+                        </td>
                         <td class="text-center">R${{str_replace('.',',',$detalhes['produto']->preco)}}</td>
                         <td class="text-center"><input type="number" step="1" min="1" name="" class="text-center w-25 quantidade" value="{{$detalhes['quantidade']}}"></td>
                         <td>

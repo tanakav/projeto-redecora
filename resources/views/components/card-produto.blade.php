@@ -12,7 +12,7 @@
 
     <div class="card-body">
         <h5 class="card-title">{{$produto->descricao}}</h5>
-        <h6 class="card-text">{{$produto->preco}}</h6>
+        <h6 class="card-text">R${{str_replace('.',',',$produto->preco)}}</h6>
         <h6 class="card-text">Parcelamento</h6>
 
     </div>

@@ -28,9 +28,9 @@
             <div class="col-4 text-center">
                 <h6>Formas de Pagamento</h6>
                 <div class="row justify-content-center">
-                    <div><a href="#"><img class="icone mx-2" src="{{asset('imagens/Footer/mastercard.png')}}" alt=""></a></div>
-                    <div><a href="#"><img class="icone mx-2" src="{{asset('imagens/Footer/visa.png')}}" alt=""></a></div>
-                    <div><a href="#"><img class="icone mx-2" src="{{asset('imagens/Footer/paypal.png')}}" alt=""></a></div>
+                    <div><img class="icone mx-2" src="{{asset('imagens/Footer/mastercard.png')}}" alt=""></div>
+                    <div><img class="icone mx-2" src="{{asset('imagens/Footer/visa.png')}}" alt=""></div>
+                    <div><img class="icone mx-2" src="{{asset('imagens/Footer/paypal.png')}}" alt=""></div>
                 </div>
             </div>
 
