@@ -43,7 +43,7 @@
                 </thead>
                 <tbody>
                 @foreach(session('cart') as $id=> $detalhes)
-                    <tr class="tr-produto" data-id="{{$detalhes['produto']->id}}">
+                    <tr class="tr-produto" data-id="{{$detalhes['produto']->id}}" data-produto="{{$detalhes['produto']->descricao}}">
                         <td>
                             <a class="link-produto" href="{{route('produtos.show',$detalhes['produto']->id)}}">
                                 <img src="{{asset('Imagens\Produtos\LatasBarris\berçobarril (1).jpg')}}" width="100px" class="mr-2 mt-2 img-responsive">
@@ -87,7 +87,18 @@
 
         $(".deletar-carrinho").click(function (e) {
             e.preventDefault();
-            deletarItemCarrinho(this);
+            let elemento = this.closest('tr').dataset.produto;
+            swal.fire({
+                title: "Deseja remover o item "+elemento+" do carrinho?",
+                icon: "info",
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: 'Sim'
+            }).then((resultado)=>{
+                if(resultado.isConfirmed){
+                    deletarItemCarrinho(this);
+                }
+            });
         });
 
 
