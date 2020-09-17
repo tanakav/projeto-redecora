@@ -70,11 +70,20 @@
 
 @section('scripts')
     <script type="text/javascript">
-        $(".atualizar-carrinho").click(function (e) {
-            console.log('atualizar');
-            e.preventDefault();
 
-            let elemento = this.closest('tr');
+        $(".deletar-carrinho").click(function (e) {
+            e.preventDefault();
+            deletarItemCarrinho(this);
+        });
+
+
+        $(".atualizar-carrinho").click(function (e) {
+            e.preventDefault();
+            atualizarItemCarrinho(this);
+        });
+
+        function atualizarItemCarrinho(icone){
+            let elemento = icone.closest('tr');
 
             $.ajax({
                 url: '{{ route('produtos.update.carrinho') }}',
@@ -84,24 +93,26 @@
                     quantidade: elemento.getElementsByClassName('quantidade')[0].value
                 },
                 success: function (response) {
-                    console.group('Sucesso atualizar')
-                    console.log(response);
-                    console.groupEnd();
+                    swal.fire({
+                        title: 'Sucesso',
+                        icon: 'success',
+                        text: 'Quantidade atualizada com sucesso!',
+                        onClose: () =>{
+                            location.reload();
+                        }
+                        });
                 },
                 error: function (response){
-                    console.group('Erro atualizar')
-                    console.log(response);
-                    console.groupEnd();
+                    swal.fire('Erro','Erro ao atualizar a quantidade','error');
+                    // console.group('Erro atualizar')
+                    // console.log(response);
+                    // console.groupEnd();
                 }
             });
-        });
+        }
 
-        $(".deletar-carrinho").click(function (e) {
-            console.log('remover');
-            e.preventDefault();
-
-            let elemento = this.closest('tr');
-
+        function deletarItemCarrinho(icone){
+            let elemento = icone.closest('tr');
             $.ajax({
                 url: '{{ route('produtos.delete.carrinho') }}',
                 method: "DELETE",
@@ -109,18 +120,28 @@
                     id: elemento.dataset.id
                 },
                 success: function (response) {
-                    console.group('Sucesso deletar')
-                    console.log(response);
-                    console.groupEnd();
+                    swal.fire({
+                        title: 'Sucesso',
+                        icon: 'success',
+                        text: 'Item removido com sucesso!',
+                        onClose: () =>{
+                            location.reload();
+                        }
+                    });
+                    // console.group('Sucesso deletar')
+                    // console.log(response);
+                    // console.groupEnd();
                 },
                 error: function (response){
-                    console.group('Erro deletar')
-                    console.log(response);
-                    console.groupEnd();
+                    swal.fire('Erro','Erro ao remover o item','error');
+                    // console.group('Erro deletar')
+                    // console.log(response);
+                    // console.groupEnd();
                 }
             });
+        }
 
-        });
+
 
     </script>
 @endsection
