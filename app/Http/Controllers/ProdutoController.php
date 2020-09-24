@@ -44,12 +44,11 @@ class ProdutoController extends Controller
             'produto' => $produto,
             'material' => Material::find($produto->materials_id),
             'cor' => Cor::find($produto->cores_id),
-            'fornecedor' => Fornecedor::find($produto->fornecedores_id)
+            'fornecedor' => Fornecedor::find($produto->fornecedores_id),
+            'categorias' => $produto->categorias()
         ]);
     }
 
-    //https://webmobtuts.com/backend-development/creating-a-shopping-cart-with-laravel/
-    //Tentar colocar no Model
     public function addToCart(Request $request){
 
         $produto = Produto::find($request->id);

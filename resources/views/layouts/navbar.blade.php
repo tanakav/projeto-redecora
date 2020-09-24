@@ -38,7 +38,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('produtos.carrinho')}}"><img src="{{asset('imagens/Header/shopping-cart.png')}}" alt=""
-                                    class="icone"></a>
+                                    class="icone"><span class="badge badge-light"></span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img src="{{asset('imagens/Header/user.png')}}" alt="" class="icone"></a>

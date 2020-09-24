@@ -39,6 +39,11 @@
                 <p> <b>Cor: </b> {{$cor->descricao}}</p>
                 <p> <b>Material: </b>{{$material->descricao}}</p>
                 <p> <b>Fornecedor: </b>{{$fornecedor->nome_fantasia}}</p>
+                <p><b>Categorias</b>
+                    @foreach($categorias as $categoria)
+                        {{$categoria}}
+                    @endforeach
+                </p>
                 <div id="comprar-produto">
                     <h3 id="preco-produto" class="">R${{$produto->preco}}</h3>
                     <form action="{{route('produtos.comprar',$produto->id)}}" method="POST">

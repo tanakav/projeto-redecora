@@ -8,6 +8,21 @@ class Produto extends Model
 {
     protected $guarded = [];
 
+    public function cadastrarProduto($request){
+        $produto = new Produto();
+        $produto->descricao = $request->descricao;
+        $produto->descricao_completa = $request->descricao_completa;
+        $produto->preco = $request->preco;
+        $produto->valor_desconto = $request->valor_desconto;
+        $produto->fornecedor()->associate($request->fornecedor);
+        $produto->cor()->associate($request->cor);
+        $produto->material->associate($request->material);
+
+
+
+
+    }
+
     public function scopeFiltro($query){
 
         if(request('categorias')){

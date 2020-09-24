@@ -12,7 +12,6 @@
             </div>
             <div class="col-6 text-justify align-self-center">
                 <p>
-                    Claudiaaaaaa <br>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, perspiciatis odit animi ipsa
                     libero similique recusandae et temporibus maxime voluptate eos expedita. Quos laudantium labore
                     architecto, atque expedita voluptatem dicta.
